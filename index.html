@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper m-0 p-0 w-[100vw] h-[100vh] overflow-hidden box-border relative flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-cyan-300" ">
+       <div>
+        <h1 class="text-center text-2xl text-black font-bold">PASSWORD GENERATOR</h1>
+      </div>
+
+      <!-- input-field -->
+      <div class="bg-sky-600 w-[22%] h-[8%] rounded-md drop-shadow-md p-2 m-2 relative shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]  ">
+        <input
+          readonly
+          placeholder="Password"
+          class="bg-sky-600 text-xl border-none text-yellow-600 font-bold "
+          data-passwordDisplay
+        />
+        <button copy-btn class="absolute right-3 top-3">
+          <span data-copyMsg class="absolute -top-6 -right-3 text-black font-medium "></span>
+          <i class="fa-regular fa-copy  "></i>
+        </button>
+      </div>
+
+      <!-- password field  -->
+      <div class="bg-sky-600 w-[22%] h-[45%] relative rounded-md">
+        <!-- password length section  -->
+        <div class="flex flex-row justify-between p-2">
+          <p class="text-white text-md font-medium capitalize ml-2">Password length</p>
+          <div data-lengthNumber class="text-md text-yellow-500 font-bold">0</div>
+        </div>
+        <!-- slider -->
+        <input class="w-[90%] ml-3 p-1 accent-yellow-500 cursor-pointer " type="range" min="1" max="20" step="1" data-lengthSlider />
+
+        <!-- checkbox -->
+        <div class="ml-3 text-md font-medium capitalize text-white ">
+          <input class="cursor-pointer  w-4 h-4  checked:accent-pink-500" type="checkbox" id="uppercase" />
+          <label for="uppercase">includes Uppercase letter</label>
+        </div>
+        <div class="ml-3 text-md font-medium capitalize text-white ">
+          <input class="cursor-pointer  w-4 h-4  checked:accent-pink-500" type="checkbox" id="lowercase" />
+          <label for="lowercase">includes lowercase letter</label>
+        </div>
+
+        <div class="ml-3 text-md font-medium capitalize text-white   ">
+          <input class="cursor-pointer  w-4 h-4  checked:accent-pink-500" type="checkbox" id="numbers" />
+          <label class="ml-1" for="numbers">includes numbers </label>
+        </div>
+
+        <div class="ml-3 text-md font-medium capitalize text-white ">
+          <input class="cursor-pointer  w-4 h-4  checked:accent-pink-500" type="checkbox" id="symbols" />
+          <label for="symbols">includes strings </label>
+        </div>
+
+        <!-- strength-section  -->
+        <div class="flex flex-row  justify-between mx-3 capitalize mt-2 ">
+          <p class="font-bold capitalize text-md  text-black">strength</p>
+          <div data-indicator class="rounded-full w-4 h-4 "></div>
+        </div>
+        <!-- Generate-password  -->
+        <div class=" flex justify-center flex-row items-center w-[100%] mt-3 p-2 bg-sky-900 cursor-pointer rounded-md z-999 ">
+          <button class="genrate-btn font-bold text-md text-center text-green-700">GENERATE PASSWORD </button> 
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
